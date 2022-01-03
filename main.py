@@ -14,7 +14,6 @@ class Update(QtCore.QRunnable):
     def run(self):
         while 1:
             self.ran1 = random.randrange(1, 4)
-            print(self.ran1)
             if self.ran1 == 1 or self.ran1 == 3:
                 main.idle()
             if self.ran1 == 2:
@@ -38,7 +37,6 @@ class Dialog(QDialog):
 
     def idle(self):
         for i in range(1, 5):
-            print(f'Sprites/Idle{i}.png')
             new_pix = QtGui.QPixmap(f'./Sprites/Idle{i}.png')
             self.splash = QSplashScreen(new_pix, QtCore.Qt.WindowStaysOnTopHint)
             self.splash.update()
